@@ -1,0 +1,40 @@
+<div class="alert alert-primary">
+  <div class="container">
+    <div id="content" #content>
+      <div class="alert alert-info">
+        <strong>Vacancy Detail</strong>
+        <input type="button" value="print" (click)="printScreen()" />
+      </div>
+      <!-- <div>
+          <input type="button" value="print" (click)="printScreen()" />
+      </div> -->
+    </div>
+
+    <table class="table" id="contentToConvert">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Job Title</th>
+          <th>Domain</th>
+          <th>Role</th>
+          <th>Employee Type</th>
+          <th>Number of Vacancies</th>
+          <th>Experiance</th>
+          <th>Job Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ employeeDetails?.id }}</td>
+          <td>{{ employeeDetails?.jobTitle }}</td>
+          <td>{{ employeeDetails?.domain }}</td>
+          <td>{{ employeeDetails?.role }}</td>
+          <td>{{ employeeDetails?.type }}</td>
+          <td>{{ employeeDetails?.vacancies }}</td>
+          <td>{{ employeeDetails?.experiance }}</td>
+          <td>{{ employeeDetails?.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

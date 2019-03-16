@@ -1,0 +1,44 @@
+{
+  "Employee": [
+    {
+      "jobTitle": "Tech Lead",
+      "domain": "Angular",
+      "role": "junior developer",
+      "type": "full time",
+      "vacancies": 4,
+      "experiance": 2,
+      "description": "front end developer",
+      "id": 1
+    },
+    {
+      "jobTitle": "Manager bhumi",
+      "domain": "QA",
+      "role": "tester",
+      "type": "full time",
+      "vacancies": 2,
+      "experiance": 2,
+      "description": "tester",
+      "id": 2
+    },
+    {
+      "jobTitle": "bhhhh",
+      "domain": ".Net",
+      "role": "senior developer",
+      "type": "part time",
+      "vacancies": 4,
+      "experiance": 5,
+      "description": "ghgfhg",
+      "id": 3
+    },
+    {
+      "jobTitle": "Tech Lead",
+      "domain": "Angular",
+      "role": "junior developer",
+      "type": "full time",
+      "vacancies": 4,
+      "experiance": 2,
+      "description": "front end",
+      "id": 4
+    }
+  ]
+}

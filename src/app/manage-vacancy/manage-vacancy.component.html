@@ -1,0 +1,16 @@
+<div class="alert alert-success">
+  <!-- <input [(ngModel)]="searchText" placeholder="Search by domain"> -->
+  <!-- <app-vacancy [employeeData]="employees" (deleteData)="delete($event)" (updateData)="update($event)" [searchFilter]="searchText"></app-vacancy> -->
+
+  <!-- <input [(ngModel)]="searchText" placeholder="Search by all"> -->
+  <!-- <app-vacancy [employeeData]="employees" (deleteData)="delete($event)" (updateData)="update($event)" (printData)="print($event)"
+    [searchText]="searchText"></app-vacancy> -->
+
+  <select [(ngModel)]="binding">
+    <option *ngFor="let listVal of list" [ngValue]="listVal">{{ listVal }}</option>
+  </select>
+  val {{binding}}
+  <input [(ngModel)]="searchText" placeholder="Search ">
+  <app-vacancy [employeeData]="employees" [fieldName]="binding" (deleteData)="delete($event)" (updateData)="update($event)"
+    (printData)="print($event)" [searchText]="searchText"></app-vacancy>
+</div>

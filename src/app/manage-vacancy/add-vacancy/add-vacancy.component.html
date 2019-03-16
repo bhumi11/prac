@@ -1,0 +1,101 @@
+<h1>Add Record</h1>
+<form #userForm="ngForm" [formGroup]="employeeDetail" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label>Job Title:
+      <input type="text" formControlName="jobTitle" class="form-control" [ngClass]="{ 'is-invalid': submitted && formControls.jobTitle.errors }" />
+      <div *ngIf="submitted && formControls.jobTitle.errors" class="alert alert-danger">
+        <div *ngIf="formControls.jobTitle.errors.required">Job Title is required</div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Select Domain:
+      <select id="domain" formControlName="domain" [ngClass]="{ 'is-invalid': submitted && formControls.domain.errors }">
+        <option *ngFor="let domain of domain" [ngValue]="domain">{{ domain }}</option>
+      </select>
+      <div *ngIf="submitted && formControls.domain.errors" class="alert alert-danger">
+        <div *ngIf="formControls.domain.errors.required">Domain is required</div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Role:
+      <select id="role" formControlName="role" [ngClass]="{ 'is-invalid': submitted && formControls.domain.errors }">
+        <option *ngFor="let role of role" [ngValue]="role">{{ role }}</option>
+      </select>
+      <div *ngIf="submitted && formControls.role.errors" class="alert alert-danger">
+        <div *ngIf="formControls.role.errors.required">Role is required</div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Employee Type:
+      <label>
+        <input type="radio" value="full time" formControlName="type">
+        <span>Full Time</span>
+      </label>
+      <label>
+        <input type="radio" value="part time" formControlName="type">
+        <span>Part Time</span>
+      </label>
+      <div *ngIf="submitted && formControls.type.errors" class="alert alert-danger">
+        <div *ngIf="formControls.type.errors.required">Employee Type is required</div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Number of vacancies:
+      <input type="number" class="form-control" formControlName="vacancies" [ngClass]="{ 'is-invalid': submitted && formControls.vacancies.errors }" />
+      <div *ngIf="submitted && formControls.vacancies.errors" class="alert alert-danger">
+        <div *ngIf="formControls.vacancies.errors.required">Number of vacancies is required</div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Experiance:
+      <input type="number" class="form-control" formControlName="experiance" [ngClass]="{ 'is-invalid': submitted && formControls.experiance.errors }" />
+      <div *ngIf="submitted && formControls.experiance.errors" class="alert alert-danger">
+        <div *ngIf="formControls.experiance.errors.required">Experiance is required</div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Job Description:
+      <textarea class="form-control" formControlName="description" [ngClass]="{ 'is-invalid': submitted && formControls.description.errors }"></textarea>
+      <div *ngIf="submitted && formControls.description.errors" class="alert alert-danger">
+        <div *ngIf="formControls.description.errors.required">Job Description is required</div>
+      </div>
+    </label>
+  </div>
+
+  <button type="submit">SAVE</button>
+  <!-- [disabled]="employeeDetail.invalid" -->
+  <button [routerLink]="['/vacancy']">Cancel</button>
+
+</form>
+
+<!-- <div class="form-group">
+      <label>
+        Job Title:
+        <input type="text" class="form-control" formControlName="jobTitle" [ngClass]="{ 'is-invalid': submitted && f.employeeDetail.get('jobTitle').errors }">
+      </label>
+      <div *ngIf="submitted && f.employeeDetail.get('jobTitle').invalid && (f.employeeDetail.get('jobTitle').dirty || f.employeeDetail.get('jobTitle').touched)"
+        class="alert alert-danger">
+        <div *ngIf="f.employeeDetail.get('jobTitle').errors">
+          Job Title is required.
+        </div>
+      </div>
+    </div> -->

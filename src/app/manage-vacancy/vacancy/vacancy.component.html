@@ -1,0 +1,42 @@
+<div class="alert alert-primary">
+  <div class="container">
+    <h2>Manage Vacancy</h2>
+    <button [routerLink]="['add']">Add Vacancy</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Job Title</th>
+          <th>Domain</th>
+          <th>Role</th>
+          <th>Employee Type</th>
+          <th>Number of Vacancies</th>
+          <th>Experiance</th>
+          <th>Job Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr *ngFor="let emp of employeeData | search:searchFilter"> -->
+        <!-- <tr *ngFor="let emp of employeeData | search:searchFilter; trackBy:emp?.id"> -->
+        <!-- <tr *ngFor="let emp of employeeData | filter:searchText:fieldName; trackBy:emp?.id"> -->
+        <tr *ngFor="let emp of employeeData | search:searchText:fieldName">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.jobTitle }}</td>
+          <td>{{ emp.domain }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.type }}</td>
+          <td>{{ emp.vacancies }}</td>
+          <td>{{ emp.experiance }}</td>
+          <td>{{ emp.description }}</td>
+          <td>
+            <button (click)="deleteEmpData(emp.id)"><i class="far fa-trash-alt"></i></button>
+            <!-- <button (click)="updateClick(emp)" [routerLink]="['edit',emp.id]"><i class="fas fa-edit"></i></button> -->
+            <button (click)="updateClick(emp)"><i class="fas fa-edit"></i></button>
+            <!-- <button [routerLink]="['view-detail', emp.id]"><i class="fas fa-print"></i></button> -->
+            <button (click)="printClick(emp)"><i class="fas fa-print"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
